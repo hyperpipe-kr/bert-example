@@ -18,6 +18,15 @@ bert-example/
 ├── app.py                          # FastAPI 서버
 ├── BERT_example.ipynb              # 모델 학습 노트북
 ├── requirements.txt                # 의존 패키지
+├── web/                            # Next.js 웹 클라이언트
+│   ├── package.json
+│   ├── next.config.mjs
+│   └── src/
+│       └── app/
+│           ├── page.tsx            # 감성분석 UI 페이지
+│           └── api/
+│               └── sentiment/
+│                   └── route.ts    # FastAPI /predict 프록시 API
 ├── data/                           # NSMC 데이터셋
 │   ├── .gitkeep
 │   ├── ratings_train.txt
@@ -84,6 +93,29 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 - API 서버: `http://localhost:8000`
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
+
+### 5. Next.js 웹 클라이언트 실행 (`web/`)
+
+FastAPI 서버가 실행 중인 상태에서, 별도 터미널에서 아래 명령으로 Next.js 앱을 실행합니다.
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+필요하면 `web/.env.local` 파일에 백엔드 URL을 명시할 수 있습니다.
+
+```bash
+SENTIMENT_API_URL=http://127.0.0.1:8000
+```
+
+기본값도 `http://127.0.0.1:8000`으로 설정되어 있어, 로컬 개발 환경에서는 생략해도 동작합니다.
+
+웹 UI 접속 주소:
+
+- Next.js 앱: `http://localhost:3000`
+- 프론트 API 라우트: `http://localhost:3000/api/sentiment`
 
 ---
 
