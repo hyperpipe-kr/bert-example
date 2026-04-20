@@ -1,6 +1,6 @@
-# BERT를 활용한 한국어 감성분석 API
+# BERT를 활용한 한국어 감성분석 웹서비스
 
-사전학습된 한국어 BERT 모델(`klue/bert-base`)을 네이버 영화 리뷰 데이터(NSMC)로 파인튜닝하여 한국어 텍스트의 감성(긍정/부정)을 분류하는 FastAPI 서버를 구현합니다.
+사전학습된 한국어 BERT 모델(`klue/bert-base`)을 네이버 영화 리뷰 데이터(NSMC)로 파인튜닝하여 한국어 텍스트의 감성(긍정/부정)을 분류하는 웹서비스를 구현합니다.
 
 - 모델: [klue/bert-base](https://huggingface.co/klue/bert-base)
 - 데이터: [NSMC (Naver Sentiment Movie Corpus)](https://github.com/e9t/nsmc)
