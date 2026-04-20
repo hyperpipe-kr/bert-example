@@ -212,4 +212,17 @@ data/*
 model/*
 !model/.gitkeep
 
+# Next.js / Node.js (web)
+web/node_modules/
+web/.next/
+web/out/
+web/.vercel/
+web/.turbo/
+web/coverage/
+web/*.log
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
+web/pnpm-debug.log*
+
 .DS_Store
